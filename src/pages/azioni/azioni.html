@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>Inserisci/Modifica</ion-title>
+    </ion-navbar>  
+</ion-header>
+<ion-content>
+  <form>
+    <ion-item>
+      <ion-label floating>Che cosa</ion-label>
+      <ion-input type="text"  name="cosa" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>A chi</ion-label>
+      <ion-input type="text"  name="chi"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Quando</ion-label>
+        <ion-input type="text" name="quando"></ion-input>
+    </ion-item>
+    <button ion-button type="submit" round>Modifica</button>
+    <button ion-button  color="secondary" round (click)="aggiungiOggetto()">Salva</button>
+  </form>
+</ion-content>
+  
