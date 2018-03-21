@@ -13,8 +13,7 @@ export class objectService {
             {
             cosa: 'Penna',
             chi: 'Paolo',
-            quando: '18/12/17',
-            
+            quando: '18/12/17', 
             },
             {
             cosa: 'Matita',
