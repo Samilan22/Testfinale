@@ -10,6 +10,13 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ActionPage } from '../pages/azioni/azioni';
 import { NativeStorage } from '@ionic-native/native-storage/';
+import { Camera, CameraOptions } from '@ionic-native/camera';
+import { Observable } from 'rxjs/Observable';
+import { of } from 'rxjs/observable/of';
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { objectService } from '../serviziooggetti/objectservice';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -17,7 +24,7 @@ import { NativeStorage } from '@ionic-native/native-storage/';
     ContactPage,
     HomePage,
     TabsPage, 
-    ActionPage
+    ActionPage,
   ],
   imports: [
     BrowserModule,
@@ -36,7 +43,10 @@ import { NativeStorage } from '@ionic-native/native-storage/';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    NativeStorage
+    NativeStorage,
+    Camera,
+    objectService
+    
   ]
 })
 export class AppModule {}

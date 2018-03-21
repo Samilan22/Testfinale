@@ -7,15 +7,15 @@
   <form>
     <ion-item>
       <ion-label floating>Che cosa</ion-label>
-      <ion-input type="text"  name="cosa" ></ion-input>
+      <ion-input type="text" [(ngModel)]="oggetto.cosa" name="cosa" ></ion-input>
     </ion-item>
     <ion-item>
       <ion-label floating>A chi</ion-label>
-      <ion-input type="text"  name="chi"></ion-input>
+      <ion-input type="text" [(ngModel)]="oggetto.chi" name="chi"></ion-input>
     </ion-item>
     <ion-item>
         <ion-label floating>Quando</ion-label>
-        <ion-input type="text" name="quando"></ion-input>
+        <ion-datetime displayFormat="DD/MM/YYYY" type="text" [(ngModel)]="oggetto.quando" name="quando"></ion-datetime>
     </ion-item>
     <button ion-button type="submit" round>Modifica</button>
     <button ion-button  color="secondary" round (click)="aggiungiOggetto()">Salva</button>

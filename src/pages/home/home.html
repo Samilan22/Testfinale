@@ -11,51 +11,18 @@
   <h2>Lista Oggetti</h2>
   
   <ion-list>
-      <ion-item-sliding #item>
-         
-    <ion-item>
-<ion-label>Oggetto 1<p>prestato da ' ' il giorno '    '</p></ion-label>
-    </ion-item>
-    
-      <ion-item-options side="right">
-        <button ion-button color="secondary" (click)="share(item)">Disponibile</button>
-        <button ion-button color="dark">X</button>
-      </ion-item-options>
-    </ion-item-sliding>
-    <ion-item-sliding>
-    <ion-item *ngFor="let oggetto of items">  
-<ion-label>{{items.cosa}}<p>prestato da '{{chi}}' il giorno '{{quando}}    '</p></ion-label>
-    </ion-item> 
-    
-      <ion-item-options side="right">
-        <button ion-button color="danger" (click)="share(item)">In prestito</button>
-        <button ion-button color="dark">X</button>
-      </ion-item-options>
-    </ion-item-sliding>
-    <ion-item-sliding>
-    <ion-item>
       
-<ion-label>Oggetto 3<p>prestato da ' ' il giorno '    '</p></ion-label>
-    </ion-item>
-    
-    
-      <ion-item-options side="right">
-        <button ion-button color="danger" (click)="share(item)">In prestito</button>
-        <button ion-button color="dark">X</button>
-      </ion-item-options>
-    </ion-item-sliding>
-    <ion-item-sliding>
-    <ion-item>
-      
-<ion-label>Oggetto 4<p>prestato da ' ' il giorno '    '</p></ion-label>
-    </ion-item>
-   
+    <ion-item-sliding *ngFor="let oggetto of oggetti">
+      <ion-item >  
+        <ion-label>{{oggetto.cosa}}<p>prestato da ' {{oggetto.chi}} ' il giorno ' {{oggetto.quando}} '</p></ion-label>
+      </ion-item> 
     
       <ion-item-options side="right">
-        <button ion-button color="secondary" (click)="share(item)">Disponibile</button>
-        <button ion-button color="dark">X</button>
+        <button ion-button [color]="oggetto.itemStatus" (click)="changeStatus(oggetto)">Disponibilità</button>
+        <button ion-button color="dark"(click)="removeItem(oggetto)">X</button>
       </ion-item-options>
     </ion-item-sliding>
+    
   </ion-list>
 
 </ion-content>
